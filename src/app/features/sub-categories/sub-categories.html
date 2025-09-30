@@ -1,0 +1,14 @@
+<h2 class="category-heading">{{ selectedCategoryName }}</h2>
+
+<div *ngIf="subcategories.length > 0; else noSubcats" class="amazon-subcategories-grid">
+  <div class="amazon-subcategory-card" *ngFor="let sub of subcategories">
+    <a [routerLink]="['/products', sub.subCategoryId]">
+      <img [src]="getSubcategoryImageUrl(sub.subCategoryName)" [alt]="sub.subCategoryName" class="subcategory-img">
+      <div class="subcategory-label">{{ sub.subCategoryName }}</div>
+    </a>
+  </div>
+</div>
+
+<ng-template #noSubcats>
+  <p class="no-subcategories">No subcategories available for this category.</p>
+</ng-template>
