@@ -13,4 +13,8 @@ export class Category {
   getCategories(): Observable<any[]> {
     return this.http.get<any[]>(`${this.base}/GetAllCategories`);
   }
+
+  /* getSubCategoriesById(categoryId: number): Observable<any[]> {
+    return this.http.get<any[]>(`${this.base}/GetSubCategoriesById/${categoryId}`);
+  } */
 }

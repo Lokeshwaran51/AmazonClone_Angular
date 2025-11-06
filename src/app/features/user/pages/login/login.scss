@@ -1,203 +1,96 @@
-:root {
-  --amazon-orange: #ff9900;
-  --amazon-dark: #131921;
-  --amazon-light: #232f3e;
-  --amazon-gray: #eaeded;
-  --white: #ffffff;
-  --black: #000000;
-  --text-dark: #0f1111;
-  --text-light: #cccccc;
-  --border-gray: #ddd;
-}
-
-* {
-  box-sizing: border-box;
-  font-family: 'Amazon Ember', Arial, sans-serif;
-}
-
-/* Center the entire component viewport */
-:host {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background-color: var(--amazon-gray);
-}
-
 .login-container {
-  width: 100%;
-  max-width: 400px;
-  padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  margin: 0 auto;
-}
+  padding: 2rem;
 
-.login-logo {
-  display: flex;
-  align-items: flex-end;
-  margin-bottom: 20px;
-}
+  .login-logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
 
-.logo {
-  width: 100px;
-  height: 30px;
-  background-image: url('https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg');
-  background-size: contain;
-  background-repeat: no-repeat;
-}
+    .logo {
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 120px;
+      height: 40px;
+    }
 
-.dotin {
-  color: black;
-  font-size: 12px;
-  margin-left: -5px;
-  margin-bottom: 2px;
-}
+    /* .dotin {
+      font-weight: bold;
+      color: #000;
+      font-size: 1.5rem;
+      margin-left: 4px;
+    } */
 
-.login-card {
-  width: 100%;
-  background-color: var(--white);
-  border-radius: 4px;
-  padding: 20px 26px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-  margin-bottom: 20px;
-}
-
-.login-title {
-  font-weight: 400;
-  font-size: 28px;
-  margin-bottom: 15px;
-  color: var(--text-dark);
-}
-
-.login-form {
-  width: 100%;
-}
-
-.form-group {
-  margin-bottom: 15px;
-}
-
-.form-label {
-  display: block;
-  font-weight: bold;
-  font-size: 13px;
-  margin-bottom: 5px;
-  color: var(--text-dark);
-}
-
-.form-input {
-  width: 100%;
-  padding: 8px 10px;
-  border: 1px solid var(--border-gray);
-  border-radius: 3px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  font-size: 13px;
-  outline: none;
-}
-
-.form-input:focus {
-  border-color: var(--amazon-orange);
-  box-shadow: 0 0 0 3px rgba(255, 153, 0, 0.2);
-}
-
-.validation-message {
-  font-size: 12px;
-  display: block;
-  margin-top: 5px;
-  color: red;
-}
-
-.login-button {
-  width: 100%;
-  background: linear-gradient(to bottom, #f7dfa5, #f0c14b);
-  border: 1px solid #a88734;
-  border-radius: 3px;
-  padding: 8px;
-  font-size: 13px;
-  cursor: pointer;
-  margin-top: 10px;
-}
-
-.login-button:hover {
-  background: linear-gradient(to bottom, #f5d78e, #eeb933);
-}
-
-.login-terms {
-  font-size: 12px;
-  margin-top: 20px;
-  line-height: 1.5;
-  color: #555;
-}
-
-.login-terms a {
-  color: #0066c0;
-  text-decoration: none;
-}
-
-.login-terms a:hover {
-  text-decoration: underline;
-  color: #c45500;
-}
-
-.login-help {
-  margin-top: 15px;
-  font-size: 13px;
-}
-
-.login-help a {
-  color: #0066c0;
-  text-decoration: none;
-}
-
-.login-help a:hover {
-  text-decoration: underline;
-  color: #c45500;
-}
-
-.login-divider {
-  width: 100%;
-  text-align: center;
-  border-bottom: 1px solid var(--border-gray);
-  line-height: 0.1em;
-  margin: 20px 0;
-  color: #767676;
-  font-size: 12px;
-}
-
-.login-divider span {
-  background: var(--amazon-gray);
-  padding: 0 10px;
-}
-
-.create-account-button {
-  width: 100%;
-  background: linear-gradient(to bottom, #f7f8fa, #e7e9ec);
-  border: 1px solid #adb1b8;
-  border-radius: 3px;
-  padding: 8px;
-  font-size: 13px;
-  cursor: pointer;
-  text-align: center;
-  text-decoration: none;
-  color: var(--text-dark);
-}
-
-.create-account-button:hover {
-  background: linear-gradient(to bottom, #e7eaf0, #d9dce1);
-}
-
-@media (max-width: 480px) {
-  .login-container {
-    padding: 10px;
+     .dotin {
+      font-size: 24px;
+      font-weight: bold;
+      margin-left: 8px;
+      color: black;
+    }
   }
+
   .login-card {
-    padding: 15px;
+    width: 100%;
+    max-width: 360px;
+    padding: 2rem;
+
+    .login-title {
+      font-weight: 600;
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+
+    .full-width {
+      width: 100%;
+      margin-bottom: 1rem;
+    }
+
+    .login-terms {
+      margin-top: 1rem;
+      font-size: 0.85rem;
+      text-align: center;
+
+      a {
+        text-decoration: none;
+        color: #1976d2;
+      }
+    }
+
+    .login-help {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 0.8rem;
+
+      mat-icon {
+        font-size: 18px;
+        margin-right: 4px;
+        color: #757575;
+      }
+
+      a {
+        color: #1976d2;
+        text-decoration: none;
+      }
+    }
   }
-  .login-title {
-    font-size: 24px;
+
+  .divider {
+    margin: 1.5rem 0;
+    width: 360px;
+  }
+
+  .new-account {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .create-account-button {
+      margin-top: 1rem;
+      width: 360px;
+    }
   }
 }
-

@@ -1,4 +1,6 @@
 import { Routes } from '@angular/router';
+/* import { authGuard } from './guards/auth-guard';
+import { LoginGuard } from './guards/login-guard-guard'; */
 
 export const routes: Routes = [
   { path: '', redirectTo: 'user/login', pathMatch: 'full' },

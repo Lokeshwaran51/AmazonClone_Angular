@@ -1,52 +1,65 @@
-import { Component } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
-import { Router, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { UserService } from '../../../../core/services/user';
+import {
+  MatCardModule
+} from '@angular/material/card';
+import {
+  MatFormFieldModule
+} from '@angular/material/form-field';
+import {
+  MatInputModule
+} from '@angular/material/input';
+import {
+  MatButtonModule
+} from '@angular/material/button';
+import {
+  MatIconModule
+} from '@angular/material/icon';
+import {
+  MatDividerModule
+} from '@angular/material/divider';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, RouterModule],
+  imports: [
+    ReactiveFormsModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    MatIconModule,
+    MatDividerModule,
+    RouterLink,
+    CommonModule 
+  ],
   templateUrl: './login.html',
   styleUrls: ['./login.scss']
 })
 export class LoginComponent {
-  submitting = false;
+  hidePassword = signal(true);
+  submitting = signal(false);
   form;
+  private router = inject(Router); 
 
-  constructor(private fb: FormBuilder, private user: UserService, private router: Router) {
+  constructor(private fb: FormBuilder) {
     this.form = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required]],
+      password: ['', Validators.required],
     });
   }
 
   submit() {
     if (this.form.invalid) return;
-  
-    this.submitting = true;
-  
-    // Ensure loginData matches LoginPayload type (no null/undefined)
-    const { email, password } = this.form.value;
-    const loginData = { email: email ?? '', password: password ?? '' };
 
-    this.user.login(loginData).subscribe({
-      next: (response: { Token: string }) => {
-        // Store JWT in localStorage
-        localStorage.setItem('token', response.Token);
-        // Navigate to home/dashboard
-        this.router.navigateByUrl('/home');
-  
-        this.submitting = false;
-      },
-      error: (err) => {
-        console.error('Login failed', err);
-        this.submitting = false;
-  
-        // Optional: show error message in template
-        alert('Login failed. Please check your credentials.');
-      },
-    });
+    this.submitting.set(true);
+    // simulate async login
+    setTimeout(() => {
+      console.log('Form submitted:', this.form.value);
+      this.router.navigate(['/home']);
+      this.submitting.set(false);
+    }, 1500);
   }
 }
