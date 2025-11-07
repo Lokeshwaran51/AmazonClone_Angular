@@ -14,7 +14,7 @@ export class Category {
     return this.http.get<any[]>(`${this.base}/GetAllCategories`);
   }
 
-  /* getSubCategoriesById(categoryId: number): Observable<any[]> {
+  getSubCategoriesById(categoryId: number): Observable<any[]> {
     return this.http.get<any[]>(`${this.base}/GetSubCategoriesById/${categoryId}`);
-  } */
+  }
 }

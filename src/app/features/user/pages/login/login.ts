@@ -55,6 +55,9 @@ export class LoginComponent {
     if (this.form.invalid) return;
 
     this.submitting.set(true);
+      const email = this.form.value.email ?? '';
+      localStorage.setItem("Email", email);
+      console.log(email);
     // simulate async login
     setTimeout(() => {
       console.log('Form submitted:', this.form.value);
@@ -62,4 +65,4 @@ export class LoginComponent {
       this.submitting.set(false);
     }, 1500);
   }
-}
+} 

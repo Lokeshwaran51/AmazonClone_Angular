@@ -11,6 +11,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatBadgeModule } from '@angular/material/badge';
+import { Cart } from '../../core/services/cart';
 
 @Component({
   selector: 'app-home',
@@ -33,12 +34,21 @@ import { MatBadgeModule } from '@angular/material/badge';
 })
 export class Home {
   categories: any[] = [];
-constructor(private categoryService: Category, private cd: ChangeDetectorRef) {}
-ngOnInit(): void {
-  this.loadCategories();
-}
+  CartItemCount: number = 0;
+  selectedCategoryName:String='';
 
-sliderImages = [
+  constructor(
+    private categoryService: Category,
+    private cd: ChangeDetectorRef,
+    private Cart: Cart
+  ) {}
+
+  ngOnInit(): void {
+    this.loadCategories();
+    this.loadCartItemCount();
+  }
+
+  sliderImages = [
     'https://m.media-amazon.com/images/I/71cp9PVuTfL._SX3000_.jpg',
     'https://m.media-amazon.com/images/I/61GnAucagBL._SX3000_.png',
     'https://m.media-amazon.com/images/I/71qlKqpJnlL._SX3000_.jpg',
@@ -54,8 +64,7 @@ sliderImages = [
         { img: 'https://images-eu.ssl-images-amazon.com/images/G/31/img22/BAU/Oct/186X116_3._SY116_CB606110532_.jpg', name: 'Watches' },
         { img: 'https://images-eu.ssl-images-amazon.com/images/G/31/img22/Fashion/Gateway/BAU/BTF-Refresh/May/PF_MF/MF-4-186-116._SY116_CB636110853_.jpg', name: 'Bags & Luggage' }
       ]
-    },
-    // add more cards as needed
+    }
   ];
 
   todayDeals = [
@@ -66,7 +75,7 @@ sliderImages = [
     { img: 'https://m.media-amazon.com/images/I/411mbYGYIdL._AC_SY200_.jpg', discount: 'Up to 52% off', type: 'Deal of the day', name: 'Campus Footwear' }
   ];
 
-loadCategories() {
+  loadCategories() {
     this.categoryService.getCategories().subscribe({
       next: (data: any) => {
         if (Array.isArray(data)) {
@@ -81,6 +90,25 @@ loadCategories() {
       },
       error: (err) => {
         console.error('Failed to load categories:', err);
+      }
+    });
+  }
+
+  loadCartItemCount() {
+    const email = localStorage.getItem("Email");
+    if (!email) {
+      console.warn("No email found in localStorage — skipping cart count.");
+      return;
+    }
+
+    this.Cart.GetCartItemCount(email).subscribe({
+      next: (count: number) => {
+        this.CartItemCount = count;
+        this.cd.detectChanges();
+        console.log("Cart item count:", this.CartItemCount);
+      },
+      error: (err) => {
+        console.error("Failed to load cart item count:", err);
       }
     });
   }
