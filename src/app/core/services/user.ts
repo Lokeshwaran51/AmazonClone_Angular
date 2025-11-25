@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, tap } from 'rxjs';
+import { Token } from '@angular/compiler';
 
 export interface RegisterPayload {
   userName: string;
@@ -24,13 +25,16 @@ export class UserService {
     return this.http.post<string>(`${this.base}/Register`, payload);
   }
 
-  login(payload: LoginPayload): Observable<{ Token: string }> {
-    return this.http.post<{ Token: string }>(`${this.base}/Login`, payload).pipe(
+  login(payload: LoginPayload): Observable<{ token: string }> {
+    
+    return this.http.post<{ token: string }>(`${this.base}/Login`, payload).pipe(
       tap(res => {
-        if (res?.Token) localStorage.setItem('auth_token', res.Token);
+        //console.log("token: "+ res.token);
+        if (res?.token) 
+          localStorage.setItem('auth_token', res.token);
       })
     );
-  }
+  } 
 
   logout(): void {
     localStorage.removeItem('auth_token');
@@ -43,4 +47,8 @@ export class UserService {
   get isLoggedIn(): boolean {
     return !!this.token;
   }
+
+  googleLogin(payload: any) {
+  return this.http.post<any>('https://localhost:7091/api/auth/google-login', payload);
+}
 }

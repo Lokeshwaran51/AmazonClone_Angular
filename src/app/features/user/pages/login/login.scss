@@ -3,6 +3,7 @@
   flex-direction: column;
   align-items: center;
   padding: 2rem;
+  margin-top: 40px;
 
   .login-logo {
     display: flex;
@@ -17,18 +18,10 @@
       height: 40px;
     }
 
-    /* .dotin {
-      font-weight: bold;
-      color: #000;
-      font-size: 1.5rem;
-      margin-left: 4px;
-    } */
-
-     .dotin {
+    .dotin {
       font-size: 24px;
-      font-weight: bold;
-      margin-left: 8px;
-      color: black;
+      margin-top: -15px;
+      margin-left: 2px;
     }
   }
 
@@ -38,9 +31,10 @@
     padding: 2rem;
 
     .login-title {
-      font-weight: 600;
-      margin-bottom: 3rem;
+      font-weight: 400;
+      margin-bottom: 2rem;
       text-align: center;
+      font-family: "Amazon Ember", Arial, sans-serif;
     }
 
     .full-width {
@@ -48,8 +42,42 @@
       margin-bottom: 1rem;
     }
 
+    .or-separator {
+      text-align: center;
+      margin: 1rem 0;
+      font-weight: 500;
+      color: #777;
+    }
+
+    .google-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      text-transform: none;
+      font-weight: 500;
+      border-color: #d93025 !important;
+      color: #d93025;
+      display: none;
+
+      &:hover {
+        background-color: rgba(217, 48, 37, 0.05);
+      }
+
+      .google-icon {
+        width: 20px;
+        height: 20px;
+        object-fit: contain;
+        vertical-align: middle;
+        margin-bottom: 2px; 
+      }
+    }
+
     .login-terms {
-      margin-top: 1rem;
+      margin-top: 1.5rem;
       font-size: 0.85rem;
       text-align: center;
 

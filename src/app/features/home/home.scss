@@ -37,6 +37,10 @@ body {
     margin-left: -106px;
     /* overflow: hidden; */
 }
+
+.mat-icon{
+  height: 20px;
+}
 .logo {
     width: 120px;
     height: 50px;
@@ -155,8 +159,14 @@ body {
     max-width: 310px; box-shadow: -10px -0px 20px rgba(196, 240, 240,0.5), 50px 50px 20px rgba(196, 240, 240,0.5);
     padding: 10px;
 }
-.card-product h2 { margin: 0; padding: 10px; font-size:29px; }
-.card-product-nested-card { display: flex; flex-wrap: wrap; }
+.card-product h2 {     height: 50px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 20px;
+    margin: 0;
+    padding: 5px;
+   }
+.card-product-nested-card { display: flex; flex-wrap: wrap; margin-top: 2px; }
 .card-nested p { margin: 5px; }
 .card-nested img { width: 128px; height: 102px; object-fit: cover; }
 .card-product-btn {
@@ -199,7 +209,7 @@ body {
 .address-container { display: flex; flex-direction: column; justify-content: center; margin-right: 15px; }
 .icon-address { display: flex; align-items: center; gap: 5px; font-size: 14px; }
 /* Search bar */
-.search-container { display: flex; flex: 1; margin: 0 15px; max-width: 600px; height: 40px; }
+.search-container { display: flex; flex: 1; margin: 0 15px; max-width: 650px; height: 40px; }
 .search-select { padding: 8px; border: none; }
 .search-input { flex: 1; padding: 8px; border: none; }
 .search-icon { background-color: #febd69; padding: 8px 12px; display: flex; align-items: center; justify-content: center; cursor: pointer; }
@@ -359,10 +369,11 @@ body {
     .order {
       font-size: 14px;
       font-weight: 600;
+      margin-top: -9px;
     }
   }
 
-  button[mat-icon-button] {
+  button[mat-icon-button] { 
     color: white;
   }
 }

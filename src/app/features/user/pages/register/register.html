@@ -5,7 +5,7 @@
   </div>
 
   <mat-card class="register-card">
-    <h1 class="login-title">Create account</h1>
+    <h1 class="login-title">Sign Or Create account</h1>
 
     <form [formGroup]="form" (ngSubmit)="submit()">
       <!-- Your Name -->
@@ -55,5 +55,15 @@
         <a [routerLink]="['/user/login']">Sign in</a>
       </p>
     </form>
+
+     <div class="register-terms">
+      By continuing, you agree to Amazon's
+      <a href="#">Conditions of Use</a> and <a href="#">Privacy Notice</a>.
+    </div>
+
+    <div class="register-help">
+      <mat-icon>help_outline</mat-icon>
+      <a href="#">Need help?</a>
+    </div>
   </mat-card>
 </div>

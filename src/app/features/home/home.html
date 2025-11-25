@@ -1,4 +1,4 @@
-<header class="header">
+<mat-toolbar class="header">
     <div class="container container-header">
       <div class="logo-container border-white">
         <div class="logo"></div>
@@ -8,7 +8,8 @@
       <div class="address-container border-white">
         <p class="hello">Hello</p>
         <div class="icon-address">
-          <i class="fa-solid fa-location-dot icon-location" style="margin-top: -4px;"></i>
+          <mat-icon style="margin-top: -9px;">location_on</mat-icon>
+          <!-- <i class="fa-solid fa-location-dot icon-location" style="margin-top: -4px;"></i> -->
           <p>Select your address</p>
         </div>
       </div>
@@ -46,12 +47,13 @@
   
       <div class="cart-option" role="button" tabindex="0" aria-label="Shopping cart">
         <div class="cart-logo" aria-hidden="true">
-          <i class="fa-solid fa-cart-shopping"></i>
+          <!-- <i class="fa-solid fa-cart-shopping"></i> -->
+           <mat-icon>shopping_cart_checkout</mat-icon>
            <span id="cart-count" class="cart-count">{{ CartItemCount }}</span>
         </div>
       </div>
     </div>
-  </header>
+</mat-toolbar>
   
   <nav class="nav">
     <div class="container container-nav">
@@ -96,7 +98,7 @@
   <section>
     <div class="image-container">
       <div class="image-list">
-        <div class="image-item"><img src="https://m.media-amazon.com/images/I/71cp9PVuTfL._SX3000_.jpg" /></div>
+        <div class="image-item"><img src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/WLA/2025/Uber/Unrec_GW/Updated/NewUpdate_DesktopHeroTemplate_3000x1200_ref._CB550300935_.jpg" /></div>
         <div class="image-item"><img src="https://m.media-amazon.com/images/I/61GnAucagBL._SX3000_.png" /></div>
         <div class="image-item"><img src="https://m.media-amazon.com/images/I/71qlKqpJnlL._SX3000_.jpg" /></div>
         <div class="image-item"><img src="https://m.media-amazon.com/images/I/71cQMXCLSvL._SX3000_.jpg" /></div>
@@ -189,11 +191,13 @@
             </div>
             <div class="card-nested">
                 <img src="https://m.media-amazon.com/images/I/51E7UtHSzgL._AC_SY110_.jpg" />
-                <p>Back Cover Case for Sony Xperia 5</p>
+                <p>Back Cover Case</p>
+                <p>for Sony Xperia 5</p>
             </div>
             <div class="card-nested">
                 <img src="https://m.media-amazon.com/images/I/51LfO3UaSOL._AC_SY110_.jpg" />
-                <p>Hard Rugged Shield Shockproof</p>
+                <p>Hard Rugged</p>
+                <p>Shield Shockproof</p>
             </div>
             <div class="card-nested">
                 <img src="https://m.media-amazon.com/images/I/613jSkvkHhL._AC_SY110_.jpg" />
@@ -231,20 +235,20 @@
             <h2>Starting ₹499 | Amazon Brands & more</h2>
             <div class="card-product-nested-card">
                 <div class="card-nested">
-                    <img src="https://images-eu.ssl-images-amazon.com/images/W/MEDIAX_1215821-T1/images/G/31/img23/PB/March/Bikram/PC_QC_CEPC_01_186_1._SY116_CB555261080_.jpg" />
-                    <p>Starting ₹799 | Earbuds &amp; neckbands</p>
+                    <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img21/june/CE/GW/QC/PC/PC_QuadCard_boAt_0.5x._SY116_CB553870684_.jpg" />
+                    <p>Starting ₹799<br>Earbuds; neckbands</p>
                 </div>
                 <div class="card-nested">
-                    <img src="https://images-eu.ssl-images-amazon.com/images/W/MEDIAX_1215821-T1/images/G/31/img23/PB/March/Bikram/PC_QC_CEPC_01_186_2._SY116_CB555261080_.jpg" />
-                    <p>Up to 60% off | Soundbars</p>
+                    <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img21/june/CE/GW/QC/PC/PC_QuadCard_Boult_0.5x._SY116_CB553870684_.jpg" />
+                    <p>Up to 60% off<br> Soundbars</p>
                 </div>
                 <div class="card-nested">
-                    <img src="https://images-eu.ssl-images-amazon.com/images/W/MEDIAX_1215821-T1/images/G/31/img23/PB/March/Bikram/PC_QC_CEPC_01_186_3._SY116_CB555261080_.jpg" />
-                    <p>Starting ₹699 | Bluetooth speakers</p>
+                    <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img21/june/CE/GW/QC/PC/PC_QuadCard_Noise_0.5x._SY116_CB553870684_.jpg" />
+                    <p>Starting ₹699<br> Bluetooth speakers</p>
                 </div>
                 <div class="card-nested">
-                    <img src="https://images-eu.ssl-images-amazon.com/images/W/MEDIAX_1215821-T1/images/G/31/img23/PB/March/Bikram/PC_QC_CEPC_01_186_4._SY116_CB555261080_.jpg" />
-                    <p>Starting ₹399 | Gaming accessories</p>
+                    <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img21/june/CE/MSO/PD3/PC_QuadCard_Zeb_0.5x_1._SY116_CB570220221_.jpg" />
+                    <p>Starting ₹399<br> Gaming accessories</p>
                 </div>
             </div>
             <button class="card-product-btn">see more</button>
@@ -253,19 +257,19 @@
             <h2>Appliances for your home | Up to 55% off</h2>
             <div class="card-product-nested-card">
                 <div class="card-nested">
-                    <img src="https://images-eu.ssl-images-amazon.com/images/W/MEDIAX_1215821-T1/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B08RDL6H79._SY116_CB667322346_.jpg" />
+                    <img src="assets/images/AC.jpg" />
                     <p>ACs</p>
                 </div>
                 <div class="card-nested">
-                    <img src="https://images-eu.ssl-images-amazon.com/images/W/MEDIAX_1215821-T1/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B08345R1ZW._SY116_CB667322346_.jpg" />
+                    <img src="assets/images/Fridge.jpg" />
                     <p>Refrigerators</p>
                 </div>
                 <div class="card-nested">
-                    <img src="https://images-eu.ssl-images-amazon.com/images/W/MEDIAX_1215821-T1/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B07G5J5FYP._SY116_CB667322346_.jpg" />
+                    <img src="assets/images/MicroOwen.jpg" />
                     <p>Microwaves</p>
                 </div>
                 <div class="card-nested">
-                    <img src="https://images-eu.ssl-images-amazon.com/images/W/MEDIAX_1215821-T1/images/G/31/IMG15/Irfan/GATEWAY/MSO/186x116---wm._SY116_CB667322346_.jpg" />
+                    <img src="assets/images/Washing Machine.jpg" />
                     <p>Washing machines</p>
                 </div>
             </div>
@@ -299,7 +303,7 @@
             <h1>
                 Top picks for you
             </h1>
-            @* <p><a href="#">See all deals</a></p> *@
+           <p><a href="#">See all deals</a></p> 
         </div>
    
         <div class="today_deals_product_container">
@@ -360,5 +364,6 @@
             </div>
         </div>
     </section>
+    <app-footer></app-footer>
     
   </main>

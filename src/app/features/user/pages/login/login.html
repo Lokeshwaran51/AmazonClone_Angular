@@ -47,6 +47,21 @@
       </button>
     </form>
 
+    <div class="or-separator">OR</div>
+
+    <!-- Google Login Button -->
+
+    <div id="googleBtn"></div>
+    <button
+      mat-stroked-button
+      color="warn"
+      class="google-btn"
+      (click)="signInWithGoogle()"
+    >
+      <img src="assets/images/google-login.png" alt="Google Logo" class="google-icon" />
+      <span>Sign in with Google</span>
+    </button>
+
     <div class="login-terms">
       By continuing, you agree to Amazon's
       <a href="#">Conditions of Use</a> and <a href="#">Privacy Notice</a>.

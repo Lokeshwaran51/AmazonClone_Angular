@@ -7,6 +7,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatCard, MatCardModule } from "@angular/material/card";
+import { MatIcon } from '@angular/material/icon';
 
 @Component({
   selector: 'app-register',
@@ -18,7 +19,8 @@ import { MatCard, MatCardModule } from "@angular/material/card";
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
-    MatCardModule 
+    MatCardModule,
+    MatIcon 
 ],
   templateUrl: './register.html',
   styleUrls: ['./register.scss']

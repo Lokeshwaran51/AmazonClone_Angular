@@ -1,0 +1,99 @@
+.footer {
+  background-color: #131a22;
+  color: white;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+/* Back to Top Button */
+.back-to-top {
+  background-color: #37475a;
+  padding: 12px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 100px;
+}
+.back-to-top:hover {
+  background-color: #485769;
+  transition: background-color 0.3s ease;
+}
+
+/* Top Section with logo, language, and country */
+.footer-top {
+  background-color: #232f3e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  padding: 20px 0;
+}
+
+.footer-logo {
+  width: 100px;
+  filter: brightness(0) invert(1);
+}
+
+.footer-country {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.language-select {
+  background-color: #232f3e;
+  color: white;
+  border: 1px solid #555;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+
+.language-select:focus {
+  outline: none;
+  border-color: #ff9900;
+}
+
+.flag {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  border: 1px solid #555;
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+
+.flag img {
+  width: 22px;
+  height: 15px;
+  border: 1px solid #ddd;
+}
+
+/* Middle section - Links */
+.footer-links {
+  background-color: #131a22;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 30px 0;
+  gap: 60px;
+}
+
+.footer-column h4 {
+  color: #ddd;
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+
+.footer-column p {
+  color: #999;
+  font-size: 13px;
+  margin: 0;
+}
+
+/* Bottom small text */
+.footer-bottom {
+  background-color: #0d141a;
+  font-size: 12px;
+  color: #aaa;
+  padding: 15px 0;
+}

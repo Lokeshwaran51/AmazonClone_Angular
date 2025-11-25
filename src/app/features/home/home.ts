@@ -12,6 +12,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatBadgeModule } from '@angular/material/badge';
 import { Cart } from '../../core/services/cart';
+import { FooterComponent } from '../footer/footer';
+
 
 @Component({
   selector: 'app-home',
@@ -27,8 +29,9 @@ import { Cart } from '../../core/services/cart';
     MatCardModule,
     MatBadgeModule,
     MatDividerModule,
-    RouterModule
-  ],
+    RouterModule,
+    FooterComponent
+],
   templateUrl: './home.html',
   styleUrls: ['./home.scss']
 })
